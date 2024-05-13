@@ -21,6 +21,17 @@ public class Weapon : Item
         type = _type;
     }
 
+    public Enemy Hit()
+    {
+        // do something that hits the enemy!
+        int dmg = HitDamage();
+    }
+
+    public int HitDamage()
+    {
+        return Random.Range(damage - damageRange, damage + damageRange + 1);
+    }
+
     // accessor methods
 
     // mutator methods

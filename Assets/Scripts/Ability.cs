@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Ability : Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    // fields
 
-    }
+    // class methods
 
-    // Update is called once per frame
-    void Update()
-    {
+    // accessor methods
 
-    }
+    // mutator methods
 }
