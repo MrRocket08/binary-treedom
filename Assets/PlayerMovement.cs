@@ -5,21 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     
-    public CharacterController2D controller;
-    public float runSpeed = 40f;
-    float horizontalMove = 0f;
-    bool jump = false;
+    public Rigidbody2D rb;
+    public float moveSpeed = 40f;
+    Vector2 movement;
 
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal"); // value btwn -1 and 1 from keyboard
-       
+        // input
+        movement.x = Input.GetAxisRaw("Horizontal"); // value in {-1, 0, 1} from keyboard
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate(){
-        // move character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        // movement
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
