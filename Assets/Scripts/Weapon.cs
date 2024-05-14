@@ -23,7 +23,7 @@ public class Weapon : Item
         type = _type;
     }
 
-    public Enemy Hit()
+    public void Hit()
     {
         // do something that hits the enemy!
         int dmg = HitDamage();
