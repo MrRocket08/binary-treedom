@@ -12,15 +12,20 @@ public class CameraFollow : MonoBehaviour
     public float maxUp;
     public float maxDown;
 
+    private Vector3 newPos;
+
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPos = new Vector3(target.position.x, target.position.y, -10f);
+        newPos = new Vector3(target.position.x, target.position.y, -10f);
 
         // clamp the camera to the bounds
         newPos.x = Mathf.Clamp(newPos.x, maxLeft, maxRight);
         newPos.y = Mathf.Clamp(newPos.y, maxDown, maxUp);
+    }
 
+    void FixedUpdate()
+    {
         transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
     }
 }
