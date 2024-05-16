@@ -6,12 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody2D rb;
+    public Player player;
     public float moveSpeed = 40f;
     public Animator animator;
     Vector2 movement;
 
     //Dash Ability Class
     public Dash dashAbility;
+
+    void Start()
+    {
+        player = this.GameObject.GetComponent<Player>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,16 +52,16 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("RunForward");
         }
 
-        if (Input.GetMouseButtonDown(2) && dashAbility != null)
+        if (Input.GetMouseButtonDown(1) && player.getStamina() > 2)
         {
             Vector3 mousePositionScreen = Input.mousePosition;
             Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
 
             // Check if the current ability is a dash ability
-            if (dashAbility != null)
-            {
-                dashAbility.PerformDash(mousePositionWorld);
-            }
+            //if (dashAbility != null)
+            //{
+            //PerformDash(mousePositionWorld);
+            //}
         }
     }
 
