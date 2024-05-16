@@ -13,5 +13,5 @@ public abstract class Enemy : MonoBehaviour
     protected AIPath aiPath;
 
     // class methods
-    protected abstract Player Attack() { }
+    protected abstract Player Attack();
 }
