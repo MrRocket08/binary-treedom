@@ -12,5 +12,7 @@ public abstract class Enemy : MonoBehaviour
 
     // class methods
     protected Player Attack()
-    { }
+    { 
+        return null;
+    }
 }
