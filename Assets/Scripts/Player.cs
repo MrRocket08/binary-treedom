@@ -11,13 +11,9 @@ public class Player : MonoBehaviour
     private float staminaRegen;
     private int speed;
     private int defense;
-    private Item[] inventory;
+    public Item[] inventory;
 
     // class methods
-    void FixedUpdate()
-    {
-
-    }
 
     public void Attack() { }
 
