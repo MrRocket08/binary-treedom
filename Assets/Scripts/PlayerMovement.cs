@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //prevents the player from dashing and walking at the same time
-        if(isDashing)
+        if (isDashing)
         {
             return;
         }
@@ -65,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         //dashing routine
-        if(Input.GetMouseButtonDown(1) && canDash){
+        if (Input.GetMouseButtonDown(1) && canDash)
+        {
             StartCoroutine(Dash());
         }
     }
@@ -88,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-       
-         // Calculate direction from player to mouse position
+
+        // Calculate direction from player to mouse position
         Vector3 mousePositionScreen = Input.mousePosition;
         Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
         Vector2 dashDirection = (mousePositionWorld - transform.position).normalized;

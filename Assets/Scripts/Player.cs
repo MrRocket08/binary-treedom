@@ -14,9 +14,13 @@ public class Player : MonoBehaviour
     private int speed;
     private int defense;
     public Item[] inventory;
+    public Weapon weapon;
 
     // class methods
-    public void Attack() { }
+    public void Attack()
+    {
+
+    }
 
     void Update()
     {

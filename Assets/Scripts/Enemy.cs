@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -9,10 +10,8 @@ public abstract class Enemy : MonoBehaviour
     protected int defense;
     protected int speed;
     protected int damage;
+    protected AIPath aiPath;
 
     // class methods
-    protected Player Attack()
-    { 
-        return null;
-    }
+    protected abstract Player Attack() { }
 }
