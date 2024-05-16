@@ -32,9 +32,9 @@ public class Player : MonoBehaviour
     }
 
     // accessor methods
-    public int getHealth() { return health; }
+    public float getHealth() { return health; }
     public float getHealthRegen() { return healthRegen; }
-    public int getStamina() { return stamina; }
+    public float getStamina() { return stamina; }
     public float getStaminaRegen() { return staminaRegen; }
     public int getSpeed() { return speed; }
     public int getDefense() { return defense; }
