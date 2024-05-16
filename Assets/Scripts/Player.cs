@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // fields
-    public int health;
+    public float health;
     public int MAXHEALTH;
     private float healthRegen;
-    public int stamina;
+    public float stamina;
     public int MAXSTAMINA;
     private float staminaRegen;
     private int speed;
