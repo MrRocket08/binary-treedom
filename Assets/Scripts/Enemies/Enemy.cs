@@ -14,5 +14,5 @@ public abstract class Enemy : MonoBehaviour
     protected Vector2 targetPos;
 
     // class methods
-    protected abstract void Attack();
+    public abstract void Attack();
 }

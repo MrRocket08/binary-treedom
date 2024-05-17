@@ -16,5 +16,5 @@ public class NullpoiScript : MonoBehaviour
 
     }
     void Attack() { return; }
-    void OnCollisionEnter2D(Collider2D col) { return; }
+    void OnCollisionEnter2D(Collision2D col) { return; }
 }
