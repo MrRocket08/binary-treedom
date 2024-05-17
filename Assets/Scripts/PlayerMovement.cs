@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100)){
-                Interactabble interactable = hit.collider.GetComponent<Interactable>();
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null){
                     SetFocus(interactable);
                 }
