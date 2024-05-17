@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     // fields
-    public float health;
-    public int MAXHEALTH;
+    public int health; //changed to int
+    public int MAXHEALTH = 100; //can change this later but base for now
     private float healthRegen;
-    public float stamina;
-    public int MAXSTAMINA;
+    public HealthBar healthBar;
+    public int stamina;
+    public int MAXSTAMINA = 100;
     private float staminaRegen;
+    public StaminaBar staminaBar;
     private int speed;
     private int defense;
     public Item[] inventory;
@@ -18,17 +21,35 @@ public class Player : MonoBehaviour
     // class methods
     public void Attack() { }
 
+    void Start()
+    {
+        health = MAXHEALTH;
+        healthBar.SetMaxHealth(MAXHEALTH);
+
+        stamina = MAXSTAMINA;
+        staminaBar.SetMaxStamina(MAXSTAMINA);
+    }
+
     void Update()
     {
-        if (health <= MAXHEALTH - healthRegen)
+
+        //testing method for health changes
+        if(Input.GetKeyDown(KeyCode.Space)){
+            health-=5;
+            healthBar.SetHealth(health);
+            stamina-=10;
+            staminaBar.SetStamina(stamina);
+        }
+        
+        /*if (health <= MAXHEALTH - healthRegen)
         {
             health += healthRegen;
-        }
+        }*/
 
-        if (stamina <= MAXSTAMINA - staminaRegen)
+        /*if (stamina <= MAXSTAMINA - staminaRegen)
         {
             stamina += staminaRegen;
-        }
+        }*/
     }
 
     // accessor methods
