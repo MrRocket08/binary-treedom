@@ -9,10 +9,10 @@ public abstract class Enemy : MonoBehaviour
     protected int defense;
     protected int speed;
     protected int damage;
+    protected float attackCooldown;
+    protected GameObject player;
+    protected Vector2 targetPos;
 
     // class methods
-    protected Player Attack()
-    { 
-        return null;
-    }
+    protected abstract void Attack();
 }
