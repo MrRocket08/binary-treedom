@@ -6,11 +6,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-
+    public Interactable focus;
+   
+   
     public Rigidbody2D rb;
     public float moveSpeed = 40f;
     public Animator animator;
     Vector2 movement;
+
+    Camera cam; 
+    
+    void Start(){
+        cam = Camera.main;
+    }
 
 
     //Dashing Field Variables
@@ -68,6 +76,30 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetMouseButtonDown(1) && canDash){
             StartCoroutine(Dash());
         }
+
+        if (Input.GetKeyDown("f")){
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100)){
+                Interactabble interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null){
+                    SetFocus(interactable);
+                }
+            }
+        }
+
+        if (Input.GetKeyDown("g")){
+            RemoveFocus();
+        }
+    }
+
+    void SetFocus(Interactable newFocus){
+        focus = newFocus;
+    }
+
+    void RemoveFocus(){
+        focus = null;
     }
 
 
