@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     // fields
-    public int health; //changed to int
-    public int MAXHEALTH = 100; //can change this later but base for now
-    private float healthRegen;
+    public int health = 20;
+    public int MAXHEALTH = 20;
+    private float healthRegen = 1f;
     public HealthBar healthBar;
-    public int stamina;
-    public int MAXSTAMINA = 100;
-    private float staminaRegen;
+    public float stamina = 5;
+    public int MAXSTAMINA = 5;
+    private float staminaRegen = 1f;
     public StaminaBar staminaBar;
     private int speed;
     private int defense;
@@ -33,23 +33,27 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        //testing method for health changes
-        if(Input.GetKeyDown(KeyCode.Space)){
-            health-=5;
-            healthBar.SetHealth(health);
-            stamina-=10;
-            staminaBar.SetStamina(stamina);
-        }
-        
-        /*if (health <= MAXHEALTH - healthRegen)
-        {
-            health += healthRegen;
-        }*/
+        healthBar.SetHealth(health);
+        staminaBar.SetStamina(stamina);
 
-        /*if (stamina <= MAXSTAMINA - staminaRegen)
+        staminaRegen -= Time.deltaTime;
+        healthRegen -= Time.deltaTime;
+
+        if (stamina <= MAXSTAMINA - 1 && staminaRegen <= 0)
         {
-            stamina += staminaRegen;
-        }*/
+            stamina += 1;
+            staminaRegen = 1;
+        } else if (stamina == MAXSTAMINA) {
+            staminaRegen = 1;
+        }
+
+        if (health <= MAXHEALTH - 1 && healthRegen <= 0)
+        {
+            health += 1;
+            healthRegen = 1;
+        } else if (health == MAXHEALTH) {
+            healthRegen = 1;
+        }
     }
 
     // accessor methods
@@ -64,8 +68,8 @@ public class Player : MonoBehaviour
     // mutator methods
     public void setHealth(int _health) { health = _health; }
     public void setHealthRegen(int _healthRegen) { healthRegen = _healthRegen; }
-    public void setStamina(int _stamina) { stamina = _stamina; }
-    public void setStaminaRegen(int _staminaRegen) { staminaRegen = _staminaRegen; }
+    public void setStamina(float _stamina) { stamina = _stamina; }
+    public void setStaminaRegen(float _staminaRegen) { staminaRegen = _staminaRegen; }
     public void setSpeed(int _speed) { speed = _speed; }
     public void setDefense(int _defense) { defense = _defense; }
     public void setInventory(int index, Item i) { inventory[index] = i; }

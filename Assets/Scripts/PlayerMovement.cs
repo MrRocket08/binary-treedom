@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public Interactable focus;
-   
    
     public Rigidbody2D rb;
     public float moveSpeed = 40f;
     public Animator animator;
     Vector2 movement;
 
+    public Player player;
+
     Camera cam; 
     
     void Start(){
         cam = Camera.main;
+
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
 
@@ -27,13 +29,12 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 48f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    private int dashingCost = 3;
 
 
     // Update is called once per frame
     void Update()
     {
-
-
         //prevents the player from dashing and walking at the same time
         if(isDashing)
         {
@@ -73,10 +74,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         //dashing routine
-        if(Input.GetMouseButtonDown(1) && canDash){
+        if(Input.GetMouseButtonDown(1) && canDash && player.getStamina() >= dashingCost) {
             StartCoroutine(Dash());
         }
 
+        // interaction routine
         if (Input.GetKeyDown("f")){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -118,6 +120,8 @@ public class PlayerMovement : MonoBehaviour
     //Dashing Co-Routine
     private IEnumerator Dash()
     {
+        player.setStamina(player.getStamina() - dashingCost);
+
         canDash = false;
         isDashing = true;
        
