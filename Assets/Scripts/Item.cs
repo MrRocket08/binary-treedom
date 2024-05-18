@@ -6,11 +6,17 @@ public abstract class Item : MonoBehaviour
 {
     // fields
     private string name;
+    private bool inInventory;
 
     // class methods
     protected void Use() { }
 
     // accessor methods
+    protected void inInventory(){return inInventory}
 
     // mutator methods
+    protected void AddToInventory(Player player){
+        player.addToInventory(this);
+        inInventory = true;
+    }
 }

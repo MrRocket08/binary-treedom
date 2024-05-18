@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public StaminaBar staminaBar;
     private int speed;
     private int defense;
-    public Item[] inventory;
+    public Item[] inventory = new Item[5];
 
     private SpriteRenderer sp;
     private Rigidbody2D rb;
@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
 
         stamina = MAXSTAMINA;
         staminaBar.SetMaxStamina(MAXSTAMINA);
+
+
     }
 
     void Update()
@@ -94,4 +96,5 @@ public class Player : MonoBehaviour
     public void setSpeed(int _speed) { speed = _speed; }
     public void setDefense(int _defense) { defense = _defense; }
     public void setInventory(int index, Item i) { inventory[index] = i; }
+    public void addToInventory(Item i){/* decide best index to add item to*/}
 }
