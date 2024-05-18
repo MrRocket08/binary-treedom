@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     // fields
     public int frameCounter = 0;
-    public float health; //changed to int
+    public static float health; //changed to int
     public int MAXHEALTH = 100; //can change this later but base for now
     private float healthRegen = 1f;
     public HealthBar healthBar;
