@@ -124,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         canDash = false;
         isDashing = true;
+        Player.stamina-=10;
        
          // Calculate direction from player to mouse position
         Vector3 mousePositionScreen = Input.mousePosition;
@@ -133,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply force for dashing
         rb.velocity = dashDirection * dashingPower;
-
 
         yield return new WaitForSeconds(dashingTime);
 
