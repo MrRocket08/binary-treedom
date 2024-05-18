@@ -124,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
 
         canDash = false;
         isDashing = true;
-        Player.stamina-=10;
        
          // Calculate direction from player to mouse position
         Vector3 mousePositionScreen = Input.mousePosition;

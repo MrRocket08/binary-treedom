@@ -33,18 +33,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //tested different speeds of stamina/health bar regen
-        frameCounter++;
-        if(frameCounter%1000==0)
-        {
-            frameCounter=0;
-            canRegenHealth = true;
-
-        }else
-        {
-            canRegenHealth = false;
-        }
-
         healthBar.SetHealth(health);
         staminaBar.SetStamina(stamina);
 
