@@ -12,11 +12,12 @@ public abstract class Item : MonoBehaviour
     protected void Use() { }
 
     // accessor methods
-    protected void inInventory(){return inInventory}
+    protected bool isInInventory(){return inInventory;}
 
     // mutator methods
     protected void AddToInventory(Player player){
         player.addToInventory(this);
         inInventory = true;
+        this.GameObject.Destroy();
     }
 }
