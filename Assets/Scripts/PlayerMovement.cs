@@ -32,7 +32,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Player.stamina<10)
+        {
+            canDash =  false;
+        }else{
+            canDash = true;
+        }
 
         //prevents the player from dashing and walking at the same time
         if(isDashing)
@@ -120,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        Player.stamina-=10;
        
          // Calculate direction from player to mouse position
         Vector3 mousePositionScreen = Input.mousePosition;
@@ -129,7 +135,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply force for dashing
         rb.velocity = dashDirection * dashingPower;
-
 
         yield return new WaitForSeconds(dashingTime);
 

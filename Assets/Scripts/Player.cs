@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,16 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     // fields
-    public int health; //changed to int
+    public int frameCounter = 0;
+    public float health; //changed to int
     public int MAXHEALTH = 100; //can change this later but base for now
-    private float healthRegen;
+    private float healthRegen = 1f;
     public HealthBar healthBar;
-    public int stamina;
+    //after taking damage the player shouldnt be allowed to regen for a little
+    public bool canRegenHealth = true;
+    public static float stamina;
     public int MAXSTAMINA = 100;
-    private float staminaRegen;
+    private float staminaRegen = 0.01f;
     public StaminaBar staminaBar;
     private int speed;
     private int defense;
@@ -32,24 +36,38 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //tested different speeds of stamina/health bar regen
+        frameCounter++;
+        if(frameCounter%1000==0)
+        {
+            frameCounter=0;
+            canRegenHealth = true;
+
+        }else
+        {
+            canRegenHealth = false;
+        }
 
         //testing method for health changes
         if(Input.GetKeyDown(KeyCode.Space)){
             health-=5;
-            healthBar.SetHealth(health);
             stamina-=10;
-            staminaBar.SetStamina(stamina);
         }
         
-        /*if (health <= MAXHEALTH - healthRegen)
+        if (health <= (float) MAXHEALTH && canRegenHealth)
         {
             health += healthRegen;
-        }*/
+            if(health> (float) MAXHEALTH) health = (float) MAXHEALTH;
+        }
 
-        /*if (stamina <= MAXSTAMINA - staminaRegen)
+        if (stamina <= (float) MAXSTAMINA)
         {
             stamina += staminaRegen;
-        }*/
+            if(stamina> (float) MAXSTAMINA) stamina = (float) MAXSTAMINA;
+        }
+
+        healthBar.SetHealth(health);
+        staminaBar.SetStamina(stamina);
     }
 
     // accessor methods
