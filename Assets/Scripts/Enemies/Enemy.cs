@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     protected int defense;
     protected int speed;
     protected int damage;
+    protected int knockback;
     protected float attackCooldown;
     protected GameObject player;
     protected Vector2 targetPos;

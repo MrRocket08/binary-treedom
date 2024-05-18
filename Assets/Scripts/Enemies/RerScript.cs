@@ -10,9 +10,13 @@ public class RerScript : Enemy
     {
         player = GameObject.Find("Player");
 
-        attackCooldown = 3;
+        health = 5;
+        defense = 0;
         speed = 50;
-    }
+        damage = 4;
+        knockback = 100;
+        attackCooldown = 3;
+}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,5 +40,16 @@ public class RerScript : Enemy
 
         rer.GetComponent<Rigidbody2D>().velocity = dashDirection * speed;
     }
-    void OnCollisionEnter2D(Collision2D col) { return; }
+    void OnCollisionEnter2D(Collision2D col) {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            Vector2 knockbackDir = new Vector2(rer.transform.position.x - targetPos.x, rer.transform.position.y - targetPos.y).normalized;
+
+            col.gameObject.GetComponent<Player>().getHit(damage, knockbackDir * knockback);
+
+            knockbackDir *= -1;
+
+            rer.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
+        }
+    }
 }

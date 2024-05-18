@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public int MAXHEALTH = 20;
     private float healthRegen = 1f;
     public HealthBar healthBar;
-    public float stamina = 5;
+    public int stamina = 5;
     public int MAXSTAMINA = 5;
     private float staminaRegen = 1f;
     public StaminaBar staminaBar;
@@ -19,11 +19,17 @@ public class Player : MonoBehaviour
     private int defense;
     public Item[] inventory;
 
+    private SpriteRenderer sp;
+    private Rigidbody2D rb;
+
     // class methods
     public void Attack() { }
 
     void Start()
     {
+        sp = GameObject.Find("PlayerGFX").GetComponent<SpriteRenderer>();
+        rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+
         health = MAXHEALTH;
         healthBar.SetMaxHealth(MAXHEALTH);
 
@@ -56,10 +62,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void getHit(int damage, Vector2 knockback)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+
+        rb.AddForce(knockback, ForceMode2D.Impulse);
+
+        // add code here that makes the player flash white (using sp)
+    }
+
+    public void Die() { return; }
+
     // accessor methods
-    public float getHealth() { return health; }
+    public int getHealth() { return health; }
     public float getHealthRegen() { return healthRegen; }
-    public float getStamina() { return stamina; }
+    public int getStamina() { return stamina; }
     public float getStaminaRegen() { return staminaRegen; }
     public int getSpeed() { return speed; }
     public int getDefense() { return defense; }
@@ -68,7 +89,7 @@ public class Player : MonoBehaviour
     // mutator methods
     public void setHealth(int _health) { health = _health; }
     public void setHealthRegen(int _healthRegen) { healthRegen = _healthRegen; }
-    public void setStamina(float _stamina) { stamina = _stamina; }
+    public void setStamina(int _stamina) { stamina = _stamina; }
     public void setStaminaRegen(float _staminaRegen) { staminaRegen = _staminaRegen; }
     public void setSpeed(int _speed) { speed = _speed; }
     public void setDefense(int _defense) { defense = _defense; }
