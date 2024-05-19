@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour
     // fields
     protected float health;
     protected int defense;
-    protected int speed;
+    protected float speed;
     protected int damage;
     protected int knockback;
     protected float attackCooldown;
