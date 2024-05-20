@@ -8,6 +8,7 @@ public class Weapon : Item
     private int damage;
     private int damageRange;
     private int useSpeed;
+    private int stamina;
     private float staminaUse;
     private string name;
     private string type;
@@ -15,7 +16,7 @@ public class Weapon : Item
     private bool isOnCooldown = false;
 
     // class methods
-    public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse)
+    public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse, int _stamina)
     {
         damage = _damage;
         damageRange = _damageRange;
@@ -23,6 +24,7 @@ public class Weapon : Item
         staminaUse = _staminaUse;
         name = _name;
         type = _type;
+        stamina = _stamina;
     }
 
     public void Hit(Enemy enemy)
@@ -52,7 +54,12 @@ public class Weapon : Item
     {
         isOnCooldown = true;
         // wait for some time
+        staminaUse = stamina;
         isOnCooldown = false;
+    }
+
+    public void Equip(){
+        // need to lock the 2D image of weapon to the player
     }
 
     // accessor methods
