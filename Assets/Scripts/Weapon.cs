@@ -12,6 +12,8 @@ public class Weapon : Item
     private string name;
     private string type;
 
+    private bool isOnCooldown = false;
+
     // class methods
     public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse)
     {
@@ -23,18 +25,44 @@ public class Weapon : Item
         type = _type;
     }
 
-    public void Hit()
+    public void Hit(Enemy enemy)
     {
         // do something that hits the enemy!
-        int dmg = HitDamage();
+        
+        if (!isOnCooldown){
+            int hitDamage = HitDamage();
+            staminaUse -= HitDamage();
+            if (staminaUse==0)
+                CoolDown();
+            enemy.subtractHealth(hitDamage);
+        }
+        
     }
 
     public int HitDamage()
     {
-        return Random.Range(damage - damageRange, damage + damageRange + 1);
+        if (staminaUse>=damage+damageRange)
+            return Random.Range(damage - damageRange, damage + damageRange + 1);
+        else if (staminaUse>=damage-damageRange) 
+            returnRandom.Range(damage - damageRange, stamina+1);
+        else return staminaUse;
+    }
+
+    public void CoolDown()
+    {
+        isOnCooldown = true;
+        // wait for some time
+        isOnCooldown = false;
     }
 
     // accessor methods
+
+    public string getName(){return name;}
+    public string getType(){return type;}
+    public int getDamage(){return damage;}
+    public int getDamageRange(){return damageRange;}
+    public int getUseSpeed(){return useSpeed;}
+    public float getStaminaUse(){return staminaUse;}
 
     // mutator methods
 }

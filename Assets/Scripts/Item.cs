@@ -18,6 +18,6 @@ public abstract class Item : MonoBehaviour
     protected void AddToInventory(Player player){
         player.addToInventory(this);
         inInventory = true;
-        this.GameObject.Destroy();
+        Destroy(this);
     }
 }

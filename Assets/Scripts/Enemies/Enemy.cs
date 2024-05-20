@@ -16,4 +16,11 @@ public abstract class Enemy : MonoBehaviour
 
     // class methods
     public abstract void Attack();
+
+    public void subtractHealth(int amount){
+        health-=amount;
+        if (health<=0)
+            Destroy(this);
+    }
+    
 }
