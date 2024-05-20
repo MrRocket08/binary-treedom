@@ -12,9 +12,7 @@ public class TreeSlapper : Weapon
         
     }
     
-    public TreeSlapper(string name){
-        super(name, "TreeSlapper", 5, 3, 2, 20);
-    }
+    public TreeSlapper(string name) : base(name, "TreeSlapper", 5, 3, 2, 20){}
 
     // Update is called once per frame
     void Update()

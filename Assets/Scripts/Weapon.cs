@@ -43,9 +43,9 @@ public class Weapon : Item
     {
         if (staminaUse>=damage+damageRange)
             return Random.Range(damage - damageRange, damage + damageRange + 1);
-        else if (staminaUse>=damage-damageRange) 
-            returnRandom.Range(damage - damageRange, stamina+1);
-        else return staminaUse;
+        else if (staminaUse>=damage-damageRange)
+            return (int) Random.Range(damage - damageRange, staminaUse+1);
+        return (int) staminaUse;
     }
 
     public void CoolDown()
