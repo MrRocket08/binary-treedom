@@ -12,7 +12,7 @@ public class Weapon : Item
     protected float staminaUse;
     protected string name;
     protected string type;
-    protected bool equipped;
+    protected bool equipped = true;
 
     private bool isOnCooldown = false;
 
