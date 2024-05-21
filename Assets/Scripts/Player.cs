@@ -51,7 +51,9 @@ public class Player : MonoBehaviour
         {
             stamina += 1;
             staminaRegen = 1;
-        } else if (stamina == MAXSTAMINA) {
+        }
+        else if (stamina == MAXSTAMINA)
+        {
             staminaRegen = 1;
         }
 
@@ -59,7 +61,9 @@ public class Player : MonoBehaviour
         {
             health += 1;
             healthRegen = 1;
-        } else if (health == MAXHEALTH) {
+        }
+        else if (health == MAXHEALTH)
+        {
             healthRegen = 1;
         }
     }
@@ -99,11 +103,11 @@ public class Player : MonoBehaviour
     public void addToInventory(Item i)
     {
         /* decide best index to add item to*/
-        if (inventory[0] == null){setInventory(0, i);}
-        else if (inventory[1] == null){setInventory(1, i);}
-        else if (inventory[2] == null){setInventory(2, i);}
-        else if (inventory[3] == null){setInventory(3, i);}
-        else {setInventory(4, i);}
+        if (inventory[0] == null) { setInventory(0, i); }
+        else if (inventory[1] == null) { setInventory(1, i); }
+        else if (inventory[2] == null) { setInventory(2, i); }
+        else if (inventory[3] == null) { setInventory(3, i); }
+        else { setInventory(4, i); }
     }
-    public void removeItem(int index){inventory[index] = null;}
+    public void removeItem(int index) { inventory[index] = null; }
 }

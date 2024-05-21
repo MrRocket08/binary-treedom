@@ -5,8 +5,10 @@ using UnityEngine;
 public class RerrScript : Enemy
 {
     public GameObject rer;
+    public Animator rAnimator;
+    public float lungeSpeed = 40f;
 
-    private float lungeSpeed = 40f;
+    private int status = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,6 @@ public class RerrScript : Enemy
 
         health = 5;
         defense = 0;
-        speed = 500;
         damage = 4;
         knockback = 20;
         attackCooldown = 3;
@@ -31,13 +32,18 @@ public class RerrScript : Enemy
 
     public override void Attack()
     {
+        setStatus(2);
+
         Vector2 dashDirection = new Vector2(targetPos.x - rer.transform.position.x, targetPos.y - rer.transform.position.y).normalized;
 
         rer.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
+
+        setStatus(1);
     }
 
-    void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.CompareTag("Player"))
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
         {
             Vector2 knockbackDir = new Vector2(rer.transform.position.x - targetPos.x, rer.transform.position.y - targetPos.y).normalized;
 
@@ -49,5 +55,8 @@ public class RerrScript : Enemy
         }
     }
 
-    public float getSpeed() { return speed; }
+    public void setStatus(int _status)
+    {
+        status = _status;
+    }
 }

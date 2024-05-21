@@ -7,7 +7,6 @@ public abstract class Enemy : MonoBehaviour
     // fields
     protected float health;
     protected int defense;
-    protected float speed;
     protected int damage;
     protected int knockback;
     protected float attackCooldown;
@@ -17,10 +16,11 @@ public abstract class Enemy : MonoBehaviour
     // class methods
     public abstract void Attack();
 
-    public void subtractHealth(int amount){
-        health-=amount;
-        if (health<=0)
+    public void subtractHealth(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
             Destroy(this);
     }
-    
+
 }

@@ -5,9 +5,9 @@ using Pathfinding;
 
 public class RerrAI : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
 
-    private float speed;
+    public float speed = 500f;
     public float nextWaypointDistance = 3f;
 
     public Transform RerrGFX;
@@ -21,7 +21,7 @@ public class RerrAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = GetComponent<RerrScript>().getSpeed();
+        target = GameObject.Find("Player").transform;
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +31,7 @@ public class RerrAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if(seeker.IsDone())
+        if (seeker.IsDone())
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
@@ -53,7 +53,8 @@ public class RerrAI : MonoBehaviour
         {
             reachedEndPath = true;
             return;
-        } else
+        }
+        else
         {
             reachedEndPath = false;
         }
