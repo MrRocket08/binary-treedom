@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ba3a2a8f0225d47aa517be06b88642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 500
   nextWaypointDistance: 2
   RerrGFX: {fileID: 5668747686561320078}
