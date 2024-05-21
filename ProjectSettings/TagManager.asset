@@ -44,3 +44,6 @@ TagManager:
   - name: Entities
     uniqueID: 183471705
     locked: 0
+  - name: Weapons
+    uniqueID: 2020801657
+    locked: 0
