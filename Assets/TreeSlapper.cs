@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TreeSlapper : Weapon
 {
-    bool equipped = false;
 
     Transform currentTransform;
 
@@ -19,8 +18,8 @@ public class TreeSlapper : Weapon
             RaycastHit2D[] hits = Physics2D.BoxCastAll(currentTransform.position, new Vector2(1,1), currentTransform.rotation.eulerAngles.x, new Vector2(1,1), 2);
             if (hits != null){
                 foreach (RaycastHit2D RH in hits){
-                    if (RH.collider.gameObject.getType() == typeof(Enemy)){
-                        Hit(RH.collider.gameObject.getType());
+                    if (RH.collider.gameObject.GetType() == typeof(Enemy)){
+                        Hit(RH.collider.gameObject.GetComponent<Enemy>());
                     }
                 }
             }

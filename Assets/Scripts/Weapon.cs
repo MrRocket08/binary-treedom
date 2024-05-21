@@ -5,13 +5,14 @@ using UnityEngine;
 public class Weapon : Item
 {
     // fields
-    private int damage;
-    private int damageRange;
-    private int useSpeed;
-    private int stamina;
-    private float staminaUse;
-    private string name;
-    private string type;
+    protected int damage;
+    protected int damageRange;
+    protected int useSpeed;
+    protected int stamina;
+    protected float staminaUse;
+    protected string name;
+    protected string type;
+    protected bool equipped;
 
     private bool isOnCooldown = false;
 
@@ -60,6 +61,8 @@ public class Weapon : Item
 
     public void Equip(){
         // need to lock the 2D image of weapon to the player
+        equipped = true;
+        
     }
 
     // accessor methods
