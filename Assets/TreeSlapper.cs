@@ -20,6 +20,7 @@ public class TreeSlapper : Weapon
                 foreach (RaycastHit2D RH in hits){
                     if (RH.collider.gameObject.CompareTag("Enemy")){
                         Hit(RH.collider.gameObject.GetComponent<Enemy>());
+                        Debug.Log("Hit");
                     }
                 }
             }
