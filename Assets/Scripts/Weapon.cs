@@ -12,7 +12,6 @@ public class Weapon : Item
     protected float staminaUse;
     protected string name;
     protected string type;
-    protected bool equipped = true;
 
     private bool isOnCooldown = false;
 
@@ -61,7 +60,6 @@ public class Weapon : Item
 
     public void Equip(){
         // need to lock the 2D image of weapon to the player
-        equipped = true;
         
     }
 

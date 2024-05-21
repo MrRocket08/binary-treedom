@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeSlapper : Weapon
 {
 
-    Transform currentTransform;
+    public Transform currentTransform;
 
     
     public TreeSlapper(string nombre) : base(nombre, "TreeSlapper", 5, 3, 2, 20, 20){currentTransform = currentTransform;}
@@ -13,13 +13,13 @@ public class TreeSlapper : Weapon
     // Update is called once per frame
     void Update()
     {
-        if (equipped && Input.GetMouseButton(0)){
+        if (Input.GetMouseButton(0)){
             // animation of sword swinging
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(currentTransform.position, new Vector2(1,1), currentTransform.rotation.eulerAngles.x, new Vector2(1,1), 2);
+            Collider2D[] hits = Physics2D.OverlapBoxAll(currentTransform.position, new Vector2(1,1), currentTransform.rotation.eulerAngles.x, new Vector2(1,1));
             if (hits != null){
-                foreach (RaycastHit2D RH in hits){
-                    if (RH.collider.gameObject.CompareTag("Enemy")){
-                        Hit(RH.collider.gameObject.GetComponent<Enemy>());
+                foreach (Collider2D Col in hits){
+                    if (Col.gameObject.CompareTag("Enemy")){
+                        Hit(Col.GetComponent<Collider>().gameObject.GetComponent<Enemy>());
                         Debug.Log("Hit");
                     }
                 }
