@@ -6,8 +6,6 @@ public class TreeSlapper : Weapon
 {
 
     public Transform currentTransform;
-
-
     public TreeSlapper(string nombre) : base(nombre, "TreeSlapper", 5, 3, 2, 20, 20) { currentTransform = currentTransform; }
 
     // Update is called once per frame
