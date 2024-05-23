@@ -81,7 +81,10 @@ public class Player : MonoBehaviour
         // add code here that makes the player flash white (using sp)
     }
 
-    public void Die() { return; }
+    public void Die() 
+    { 
+        return; 
+    }
 
     // accessor methods
     public int getHealth() { return health; }
