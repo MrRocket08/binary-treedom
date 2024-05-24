@@ -43,15 +43,18 @@ public class Interactable : MonoBehaviour
         {
             Debug.Log("interacted!");
 
+            if(instPrompt != null) { Destroy(instPrompt); }
+
             if(itemToGive is Weapon)
             {
                 wm.setWeapon((Weapon)itemToGive);
-                Destroy(this);
+                
+                Destroy(this.gameObject);
             } else
             {
                 player.addToInventory(itemToGive);
 
-                Destroy(this);
+                Destroy(this.gameObject);
             }
         }
     }

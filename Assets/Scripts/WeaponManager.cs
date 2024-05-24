@@ -8,12 +8,12 @@ public class WeaponManager : MonoBehaviour
     public GameObject interactable;
 
     private SpriteRenderer sp;
-
-    private GameObject discarded;
+    private WeaponUI wu;
 
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
+        wu = GameObject.Find("WeaponDisplay").GetComponent<WeaponUI>();
     }
 
     public void setWeapon(Weapon w)
@@ -21,6 +21,8 @@ public class WeaponManager : MonoBehaviour
         weapon = w;
 
         sp.sprite = w.getSprite();
+
+        wu.updateWeapon(w);
     }
 
     public void useWeapon()
