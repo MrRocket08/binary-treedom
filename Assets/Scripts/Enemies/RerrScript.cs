@@ -20,7 +20,7 @@ public class RerrScript : Enemy
         knockback = 20;
         attackCooldown = 3;
 
-        InvokeRepeating("Attack", 0f, attackCooldown);
+        InvokeRepeating("Attack", (float) Random.Range(0, attackCooldown), attackCooldown);
     }
 
     // Update is called once per frame

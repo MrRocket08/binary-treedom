@@ -40147,7 +40147,10 @@ MonoBehaviour:
   - {x: 15, y: 3}
   - {x: 23, y: -5}
   - {x: 40, y: -3}
-  enemies: []
+  enemies:
+  - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
+  - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
+  - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
   interactableLocations:
   - {x: 19.5, y: 4}
   interactables:
