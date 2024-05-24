@@ -15,18 +15,31 @@ public class TreeSlapper : Weapon
         {
             // animation of sword swinging
             Collider2D[] hits = Physics2D.OverlapBoxAll(currentTransform.position, new Vector2(1, 1), currentTransform.rotation.eulerAngles.x);
+            Debug.Log("Box cast");
             if (hits != null)
             {
+                Debug.Log("Hit not null");
                 foreach (Collider2D Col in hits)
                 {
+                    Debug.Log("One object hit");
                     if (Col.gameObject.CompareTag("Enemy"))
                     {
                         Col.gameObject.GetComponent<Enemy>().subtractHealth(Random.Range(damage - damageRange, damage + damageRange));
-                        Debug.Log("Hit");
+                        Debug.Log("Health subtracted from enemy");
                     }
                 }
             }
         }
+
+    }
+    public void Update(){
+        if (cooldown <=0){
+            Hit();
+            cooldown = 0.5f;
+        }
+        
+        cooldown -= Time.deltaTime;
+
     }
 
 }
