@@ -27,18 +27,9 @@ public class Weapon : Item
         stamina = _stamina;
     }
 
-    public void Hit(Enemy enemy)
+    public void Hit()
     {
-        // do something that hits the enemy!
-        
-        if (!isOnCooldown){
-            int hitDamage = HitDamage();
-            staminaUse -= HitDamage();
-            if (staminaUse==0)
-                CoolDown();
-            enemy.subtractHealth(hitDamage);
-        }
-        
+        // do something that hits the enemy!  
     }
 
     public int HitDamage()

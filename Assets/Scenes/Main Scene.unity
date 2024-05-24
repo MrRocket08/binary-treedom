@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 926651212}
   - component: {fileID: 926651214}
   m_Layer: 0
-  m_Name: Item
+  m_Name: Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6513,6 +6513,7 @@ GameObject:
   - component: {fileID: 1149212190}
   - component: {fileID: 1149212192}
   - component: {fileID: 1149212191}
+  - component: {fileID: 1149212193}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -6547,7 +6548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3473db5b4f0064cfab0ffe33f9d3c582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTransform: {fileID: 0}
+  currentTransform: {fileID: 1149212190}
 --- !u!212 &1149212192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6600,6 +6601,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1149212193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149212189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d55cb7470d3e34479059ab08190584b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
 --- !u!1 &1176998132
 GameObject:
   m_ObjectHideFlags: 0
@@ -6741,7 +6755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be0a88f134b94c7bb2d7310f308b97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focus: {fileID: 0}
   rb: {fileID: 1176998137}
   moveSpeed: 8
   animator: {fileID: 1887800871}
@@ -6818,8 +6831,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2020801657
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.66490215, g: 1, b: 0.36320752, a: 1}
@@ -6859,7 +6872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3473db5b4f0064cfab0ffe33f9d3c582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTransform: {fileID: 0}
+  currentTransform: {fileID: 1186977863}
 --- !u!1 &1256476514
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,21 @@ public class Interactable : MonoBehaviour
     public GameObject prompt;
     public float distance;
 
+    private SpriteRenderer sp;
     private GameObject instPrompt = null;
+
+    public Interactable(Item i)
+    {
+        itemToGive = i;
+    }
 
     private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        target = GameObject.Find("Player").GetComponent<Transform>();
+        player = target.gameObject.GetComponent<Player>();
+
+        sp = GetComponent<SpriteRenderer>();
+        sp.sprite = itemToGive.getSprite();
     }
 
     private void FixedUpdate()
@@ -37,4 +47,10 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public void setItemToGive(Item i)
+    {
+        itemToGive = i;
+
+        sp.sprite = i.getSprite();
+    }
 }

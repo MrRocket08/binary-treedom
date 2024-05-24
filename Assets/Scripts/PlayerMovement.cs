@@ -4,9 +4,7 @@ using UnityEngine;
 
 
 public class PlayerMovement : MonoBehaviour
-{
-    public Interactable focus;
-   
+{   
     public Rigidbody2D rb;
     public float moveSpeed = 40f;
     public Animator animator;
@@ -77,33 +75,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetMouseButtonDown(1) && canDash && player.getStamina() >= dashingCost) {
             StartCoroutine(Dash());
         }
-
-        // interaction routine
-        if (Input.GetKeyDown("f")){
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100)){
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null){
-                    SetFocus(interactable);
-                }
-            }
-        }
-
-        if (Input.GetKeyDown("g")){
-            RemoveFocus();
-        }
     }
-
-    void SetFocus(Interactable newFocus){
-        focus = newFocus;
-    }
-
-    void RemoveFocus(){
-        focus = null;
-    }
-
 
     void FixedUpdate()
     {

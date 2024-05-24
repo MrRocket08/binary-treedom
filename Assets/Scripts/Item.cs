@@ -5,14 +5,17 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     // fields
-    private string name;
-    private bool inInventory;
+    protected string name;
+    protected bool inInventory;
+    protected Sprite sprite;
 
     // class methods
     protected void Use() { }
 
     // accessor methods
-    protected bool isInInventory(){return inInventory;}
+    protected bool isInInventory(){ return inInventory; }
+    
+    public Sprite getSprite() { return sprite;  }
 
     // mutator methods
     protected void AddToInventory(Player player){
@@ -20,4 +23,6 @@ public abstract class Item : MonoBehaviour
         inInventory = true;
         Destroy(this);
     }
+
+
 }
