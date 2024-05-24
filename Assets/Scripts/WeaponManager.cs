@@ -9,23 +9,24 @@ public class WeaponManager : MonoBehaviour
 
     private SpriteRenderer sp;
 
+    private GameObject discarded;
+
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
-        sp.sprite = weapon.getSprite();
     }
 
     public void setWeapon(Weapon w)
     {
-        GameObject discarded = Instantiate(interactable, transform.position, Quaternion.identity);
-        discarded.GetComponent<Interactable>().setItemToGive(weapon);
         weapon = w;
 
-        sp.sprite = weapon.getSprite();
+        sp.sprite = w.getSprite();
     }
 
     public void useWeapon()
     {
         weapon.Hit();
     }
+
+    public Weapon getWeapon() { return weapon; }
 }

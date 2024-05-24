@@ -5,11 +5,12 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
     public Transform target;
     public Player player;
-    public Item itemToGive;
+    public Item itemToGive = null;
     public GameObject prompt;
     public float distance;
 
     private SpriteRenderer sp;
+    private WeaponManager wm;
     private GameObject instPrompt = null;
 
     public Interactable(Item i)
@@ -20,10 +21,10 @@ public class Interactable : MonoBehaviour
     private void Start()
     {
         target = GameObject.Find("Player").GetComponent<Transform>();
-        player = target.gameObject.GetComponent<Player>();
+        player = target.GetComponent<Player>();
+        wm = GameObject.Find("Weapon").GetComponent<WeaponManager>();
 
         sp = GetComponent<SpriteRenderer>();
-        sp.sprite = itemToGive.getSprite();
     }
 
     private void FixedUpdate()
@@ -32,16 +33,24 @@ public class Interactable : MonoBehaviour
 
         if(distance <= radius && instPrompt == null)
         {
-            instPrompt = Instantiate(prompt, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            instPrompt = Instantiate(prompt, new Vector2(transform.position.x, transform.position.y + 1f), Quaternion.identity);
         } else if (distance > radius) { Destroy(instPrompt); instPrompt = null; }
     }
 
     private void OnMouseOver()
     {
-        if (distance < radius && Input.GetKeyDown("F"))
+        if (distance < radius && Input.GetButton("Submit"))
         {
-            if(player.addToInventory(itemToGive))
+            Debug.Log("interacted!");
+
+            if(itemToGive is Weapon)
             {
+                wm.setWeapon((Weapon)itemToGive);
+                Destroy(this);
+            } else
+            {
+                player.addToInventory(itemToGive);
+
                 Destroy(this);
             }
         }

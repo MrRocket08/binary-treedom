@@ -7,7 +7,7 @@ public abstract class Item : MonoBehaviour
     // fields
     protected string name;
     protected bool inInventory;
-    protected Sprite sprite;
+    public Sprite sprite;
 
     // class methods
     protected void Use() { }

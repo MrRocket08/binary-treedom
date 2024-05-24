@@ -6,16 +6,27 @@ public class GameMasterScript : MonoBehaviour
 {
     public Vector2[] spawnLocations;
 
-    public GameObject[] enemiesToSpawn;
+    public GameObject[] enemies;
+
+    public Vector2[] interactableLocations;
+    public GameObject[] interactables;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (spawnLocations.Length > 0 && enemiesToSpawn.Length > 0)
+        if (spawnLocations.Length > 0 && spawnLocations.Length == enemies.Length)
             for (int i = 0; i < spawnLocations.Length; i++)
             {
-                Instantiate(enemiesToSpawn[i], spawnLocations[i], Quaternion.identity);
+                Instantiate(enemies[i], spawnLocations[i], Quaternion.identity);
             }
+
+        if (interactableLocations.Length > 0 && interactableLocations.Length == interactables.Length)
+        {
+            for (int i = 0; i < interactableLocations.Length; i++)
+            {
+                GameObject inter = Instantiate(interactables[i], interactableLocations[i], Quaternion.identity);
+            }
+        }
     }
 
     // Update is called once per frame

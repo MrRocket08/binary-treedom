@@ -10,7 +10,6 @@ public class Weapon : Item
     protected int useSpeed;
     protected int stamina;
     protected float staminaUse;
-    protected string name;
     protected string type;
 
     private bool isOnCooldown = false;
@@ -29,7 +28,7 @@ public class Weapon : Item
 
     public void Hit()
     {
-        // do something that hits the enemy!  
+
     }
 
     public int HitDamage()
@@ -47,11 +46,6 @@ public class Weapon : Item
         // wait for some time
         staminaUse = stamina;
         isOnCooldown = false;
-    }
-
-    public void Equip(){
-        // need to lock the 2D image of weapon to the player
-        
     }
 
     // accessor methods

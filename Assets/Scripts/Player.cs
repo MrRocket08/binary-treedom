@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     {
         sp = GameObject.Find("PlayerGFX").GetComponent<SpriteRenderer>();
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        wm = rb.gameObject.GetComponent<WeaponManager>();
+        wm = GameObject.Find("Weapon").GetComponent<WeaponManager>();
 
         health = MAXHEALTH;
         healthBar.SetMaxHealth(MAXHEALTH);
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         staminaRegen -= Time.deltaTime;
         healthRegen -= Time.deltaTime;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && wm.getWeapon() != null)
         {
             Attack();
         }
