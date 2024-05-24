@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
             Die();
         }
 
-        rb.AddForce(knockback, ForceMode2D.Impulse);
+        rb.AddForce(knockback, ForceMode2D.Impulse); //this currently just--doesn't work
 
         // add code here that makes the player flash white (using sp)
     }

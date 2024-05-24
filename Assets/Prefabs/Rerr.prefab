@@ -157,6 +157,7 @@ MonoBehaviour:
   speed: 500
   nextWaypointDistance: 2
   RerrGFX: {fileID: 5668747686561320078}
+  rAnim: {fileID: 536462350639244214}
 --- !u!1 &7526689132823002137
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 183471705
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1577279386, guid: b6c9637bc406aa5478d2ab2c9c44880b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

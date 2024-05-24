@@ -11,6 +11,7 @@ public class RerrAI : MonoBehaviour
     public float nextWaypointDistance = 3f;
 
     public Transform RerrGFX;
+    public Animator rAnim;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -71,13 +72,23 @@ public class RerrAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x > 0.01f)
+        if (force.x > 0.05f)
         {
-            RerrGFX.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+
+            rAnim.ResetTrigger("Idle");
+            rAnim.SetTrigger("Moving");
         }
-        else if (force.x < -0.01f)
+        else if (force.x < -0.05f)
         {
-            RerrGFX.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            rAnim.ResetTrigger("Idle");
+            rAnim.SetTrigger("Moving");
+        }
+        else
+        {
+            rAnim.ResetTrigger("Moving");
+            rAnim.SetTrigger("Idle");
         }
     }
 }
