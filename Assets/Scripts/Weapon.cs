@@ -15,6 +15,31 @@ public class Weapon : Item
     protected float cooldown = 0;
 
     // class methods
+   
+   public void Hit()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            // animation of sword swinging
+            Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, new Vector2(1, 1), transform.rotation.eulerAngles.x);
+            Debug.Log("Box cast");
+            if (hits != null)
+            {
+                Debug.Log("Hit not null");
+                foreach (Collider2D Col in hits)
+                {
+                    Debug.Log("One object hit");
+                    if (Col.gameObject.CompareTag("Enemy"))
+                    {
+                        Col.gameObject.GetComponent<Enemy>().subtractHealth(Random.Range(damage - damageRange, damage + damageRange));
+                        Debug.Log("Health subtracted from enemy");
+                    }
+                }
+            }
+        }
+
+    }
+   
     public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse, int _stamina)
     {
         damage = _damage;
@@ -24,11 +49,6 @@ public class Weapon : Item
         name = _name;
         type = _type;
         stamina = _stamina;
-    }
-
-    public void Hit()
-    {
-
     }
 
     public int HitDamage()
