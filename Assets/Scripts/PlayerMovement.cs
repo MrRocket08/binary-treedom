@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
        
-         // Calculate direction from player to mouse position
+        // Calculate direction from player to mouse position
         Vector3 mousePositionScreen = Input.mousePosition;
         Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
         Vector2 dashDirection = (mousePositionWorld - transform.position).normalized;

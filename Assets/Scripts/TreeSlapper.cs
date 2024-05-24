@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class TreeSlapper : Weapon
 {
-
-    public Transform currentTransform;
-    public TreeSlapper(string nombre) : base(nombre, "TreeSlapper", 5, 3, 2, 20, 20) { currentTransform = transform; }
-
-    // Update is called once per frame
-    
-    public void Update(){
-        if (cooldown <=0){
-            Hit();
-            cooldown = 0.5f;
-        }
-        
-        cooldown -= Time.deltaTime;
-
+    private void Start()
+    {
+        damage = 5;
+        damageRange = 2;
+        useSpeed = 0.5f;
+        projSpeed = 40f;
+        isPiercing = false;
+        cooldown = useSpeed;
+        staminaUse = 1;
     }
-
 }

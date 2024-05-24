@@ -15,6 +15,7 @@ public class NullpoiAI : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     bool reachedEndPath = false;
+    bool attacking = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -42,6 +43,11 @@ public class NullpoiAI : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
+    }
+
+    public void Attack()
+    {
+        attacking = true;
     }
 
     // Update is called once per frame

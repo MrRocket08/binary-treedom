@@ -7876,6 +7876,7 @@ MonoBehaviour:
   nullpoi: {fileID: 1441941247}
   shootSphere: {fileID: 0}
   nAnimator: {fileID: 1937896076}
+  npAI: {fileID: 0}
 --- !u!114 &1441941253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7888,7 +7889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1942fabaf9084b23870b323ce5a5f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 1200
   nextWaypointDistance: 3
   nAnim: {fileID: 1937896076}
 --- !u!1 &1485184818

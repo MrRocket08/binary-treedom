@@ -25,7 +25,13 @@ public class Player : MonoBehaviour
     private WeaponManager wm;
 
     // class methods
-    public void Attack() { wm.useWeapon(); }
+    public void Attack() {
+        if(stamina >= wm.getWeapon().getStaminaUse() && wm.getWeapon().getCooldown() <= 0)
+        {
+            Debug.Log("Attacking!");
+            wm.useWeapon();
+        }
+    }
 
     void Start()
     {
@@ -50,6 +56,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButton(0) && wm.getWeapon() != null)
         {
+            Debug.Log("A");
             Attack();
         }
 

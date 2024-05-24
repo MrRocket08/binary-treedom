@@ -7,68 +7,46 @@ public class Weapon : Item
     // fields
     protected int damage;
     protected int damageRange;
-    protected int useSpeed;
-    protected int stamina;
-    protected float staminaUse;
-    protected string type;
+    protected float useSpeed;
+    protected float projSpeed;
+    protected bool isPiercing;
+    protected float cooldown;
+    protected int staminaUse;
 
-    protected float cooldown = 0;
+    public GameObject projectile;
 
     // class methods
-   
-   public void Hit()
+    public void Hit()
     {
-        if (Input.GetMouseButton(0))
-        {
-            // animation of sword swinging
-            Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, new Vector2(1, 1), transform.rotation.eulerAngles.x);
-            Debug.Log("Box cast");
-            if (hits != null)
-            {
-                Debug.Log("Hit not null");
-                foreach (Collider2D Col in hits)
-                {
-                    Debug.Log("One object hit");
-                    if (Col.gameObject.CompareTag("Enemy"))
-                    {
-                        Col.gameObject.GetComponent<Enemy>().subtractHealth(Random.Range(damage - damageRange, damage + damageRange));
-                        Debug.Log("Health subtracted from enemy");
-                    }
-                }
-            }
-        }
+        Vector3 mousePositionScreen = Input.mousePosition;
+        Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
+        Vector2 shootDir = (mousePositionWorld - transform.position).normalized;
 
+        GameObject _projectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        _projectile.transform.LookAt(mousePositionWorld);
+        _projectile.GetComponent<Rigidbody2D>().AddForce(shootDir * projSpeed);
+        _projectile.GetComponent<Projectile>().setFields(damage, isPiercing);
+
+        cooldown = useSpeed;
     }
-   
-    public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse, int _stamina)
+    public void Update()
     {
-        damage = _damage;
-        damageRange = _damageRange;
-        useSpeed = _useSpeed;
-        staminaUse = _staminaUse;
-        name = _name;
-        type = _type;
-        stamina = _stamina;
+        cooldown -= Time.deltaTime;
     }
 
     public int HitDamage()
     {
-        if (staminaUse>=damage+damageRange)
-            return Random.Range(damage - damageRange, damage + damageRange + 1);
-        else if (staminaUse>=damage-damageRange)
-            return (int) Random.Range(damage - damageRange, staminaUse+1);
-        return (int) staminaUse;
+        return Random.Range(damage - damageRange, damage + damageRange);
     }
 
 
     // accessor methods
 
     public string getName(){return name;}
-    public string getType(){return type;}
     public int getDamage(){return damage;}
     public int getDamageRange(){return damageRange;}
-    public int getUseSpeed(){return useSpeed;}
-    public float getStaminaUse(){return staminaUse;}
-
+    public float getUseSpeed(){return useSpeed;}
+    public float getCooldown() { return cooldown; }
+    public float getStaminaUse() { return staminaUse; }
     // mutator methods
 }

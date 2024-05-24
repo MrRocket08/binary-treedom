@@ -7,6 +7,7 @@ public class NullpoiScript : Enemy
     public GameObject nullpoi;
     public GameObject shootSphere;
     public Animator nAnimator;
+    public NullpoiAI npAI;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,6 @@ public class NullpoiScript : Enemy
 
     public override void Attack()
     {
-        //Vector2 dashDirection = new Vector2(targetPos.x - nullpoi.transform.position.x, targetPos.y - nullpoi.transform.position.y).normalized;
-
-        //nullpoi.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
+        npAI.Attack();
     }
 }
