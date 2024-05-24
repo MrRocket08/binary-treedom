@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NullpoiScript : MonoBehaviour
+public class NullpoiScript : Enemy
 {
     public GameObject nullpoi;
     public Animator rAnimator;
@@ -30,8 +30,8 @@ public class NullpoiScript : MonoBehaviour
 
     public override void Attack()
     {
-        Vector2 dashDirection = new Vector2(targetPos.x - rer.transform.position.x, targetPos.y - rer.transform.position.y).normalized;
+        //Vector2 dashDirection = new Vector2(targetPos.x - nullpoi.transform.position.x, targetPos.y - nullpoi.transform.position.y).normalized;
 
-        rer.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
+        //nullpoi.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
     }
 }
