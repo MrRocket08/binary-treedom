@@ -10,8 +10,7 @@ public class NullpoiAI : MonoBehaviour
     public float speed = 500f;
     public float nextWaypointDistance = 3f;
 
-    public Transform RerrGFX;
-    public Animator rAnim;
+    public Animator nAnim;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -76,19 +75,19 @@ public class NullpoiAI : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
 
-            rAnim.ResetTrigger("Idle");
-            rAnim.SetTrigger("Moving");
+            nAnim.ResetTrigger("Idle");
+            nAnim.SetTrigger("Moving");
         }
         else if (force.x < -0.05f)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
-            rAnim.ResetTrigger("Idle");
-            rAnim.SetTrigger("Moving");
+            nAnim.ResetTrigger("Idle");
+            nAnim.SetTrigger("Moving");
         }
         else
         {
-            rAnim.ResetTrigger("Moving");
-            rAnim.SetTrigger("Idle");
+            nAnim.ResetTrigger("Moving");
+            nAnim.SetTrigger("Idle");
         }
     }
 }

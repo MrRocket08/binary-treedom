@@ -5,7 +5,8 @@ using UnityEngine;
 public class NullpoiScript : Enemy
 {
     public GameObject nullpoi;
-    public Animator rAnimator;
+    public GameObject shootSphere;
+    public Animator nAnimator;
 
     // Start is called before the first frame update
     void Start()

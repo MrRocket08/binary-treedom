@@ -5,7 +5,6 @@ using UnityEngine;
 public class RerrScript : Enemy
 {
     public GameObject rer;
-    public Animator rAnimator;
     public float lungeSpeed = 40f;
 
     // Start is called before the first frame update
