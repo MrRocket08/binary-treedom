@@ -8,7 +8,6 @@ public class RerrScript : Enemy
     public Animator rAnimator;
     public float lungeSpeed = 40f;
 
-    private int status = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,7 @@ public class RerrScript : Enemy
         knockback = 20;
         attackCooldown = 3;
 
-        InvokeRepeating("Attack", (float) Random.Range(0, attackCooldown), attackCooldown);
+        InvokeRepeating("Attack", (float)Random.Range(0, attackCooldown), attackCooldown);
     }
 
     // Update is called once per frame
@@ -32,13 +31,9 @@ public class RerrScript : Enemy
 
     public override void Attack()
     {
-        setStatus(2);
-
         Vector2 dashDirection = new Vector2(targetPos.x - rer.transform.position.x, targetPos.y - rer.transform.position.y).normalized;
 
         rer.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
-
-        setStatus(1);
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -53,10 +48,5 @@ public class RerrScript : Enemy
 
             rer.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
         }
-    }
-
-    public void setStatus(int _status)
-    {
-        status = _status;
     }
 }
