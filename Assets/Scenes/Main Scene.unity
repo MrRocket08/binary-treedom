@@ -7831,7 +7831,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 5
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -7875,7 +7875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nullpoi: {fileID: 1441941247}
   shootSphere: {fileID: 0}
-  nAnimator: {fileID: 0}
+  nAnimator: {fileID: 1937896076}
 --- !u!114 &1441941253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7890,7 +7890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 300
   nextWaypointDistance: 3
-  nAnim: {fileID: 0}
+  nAnim: {fileID: 1937896076}
 --- !u!1 &1485184818
 GameObject:
   m_ObjectHideFlags: 0
