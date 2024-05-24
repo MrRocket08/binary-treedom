@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         staminaRegen -= Time.deltaTime;
         healthRegen -= Time.deltaTime;
 
-        if()
+        
 
         if (stamina <= MAXSTAMINA - 1 && staminaRegen <= 0)
         {
