@@ -22,22 +22,22 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer sp;
     private Rigidbody2D rb;
+    private WeaponManager wm;
 
     // class methods
-    public void Attack() { }
+    public void Attack() { wm.useWeapon(); }
 
     void Start()
     {
         sp = GameObject.Find("PlayerGFX").GetComponent<SpriteRenderer>();
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        wm = rb.gameObject.GetComponent<WeaponManager>();
 
         health = MAXHEALTH;
         healthBar.SetMaxHealth(MAXHEALTH);
 
         stamina = MAXSTAMINA;
         staminaBar.SetMaxStamina(MAXSTAMINA);
-
-
     }
 
     void Update()
@@ -48,7 +48,10 @@ public class Player : MonoBehaviour
         staminaRegen -= Time.deltaTime;
         healthRegen -= Time.deltaTime;
 
-        
+        if (Input.GetMouseButton(0))
+        {
+            Attack();
+        }
 
         if (stamina <= MAXSTAMINA - 1 && staminaRegen <= 0)
         {

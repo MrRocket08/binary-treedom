@@ -7285,6 +7285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!1 &1176998132
 GameObject:
   m_ObjectHideFlags: 0
@@ -66083,5 +66084,4 @@ SceneRoots:
   - {fileID: 1841675895}
   - {fileID: 1976467600}
   - {fileID: 1961552134}
-  - {fileID: 926651213}
   - {fileID: 1186977863}
