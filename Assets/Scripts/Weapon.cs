@@ -12,7 +12,7 @@ public class Weapon : Item
     protected float staminaUse;
     protected string type;
 
-    private bool isOnCooldown = false;
+    protected float cooldown = 0;
 
     // class methods
     public Weapon(string _name, string _type, int _damage, int _damageRange, int _useSpeed, float _staminaUse, int _stamina)
@@ -40,13 +40,6 @@ public class Weapon : Item
         return (int) staminaUse;
     }
 
-    public void CoolDown()
-    {
-        isOnCooldown = true;
-        // wait for some time
-        staminaUse = stamina;
-        isOnCooldown = false;
-    }
 
     // accessor methods
 
