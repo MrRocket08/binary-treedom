@@ -21,7 +21,7 @@ public class TreeSlapper : Weapon
                 {
                     if (Col.gameObject.CompareTag("Enemy"))
                     {
-                        Hit(Col.gameObject.GetComponent<Enemy>());
+                        Col.gameObject.GetComponent<Enemy>().subtractHealth(Random.Range(damage - damageRange, damage + damageRange);
                         Debug.Log("Hit");
                     }
                 }
