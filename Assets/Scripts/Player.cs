@@ -105,14 +105,15 @@ public class Player : MonoBehaviour
     public void setSpeed(int _speed) { speed = _speed; }
     public void setDefense(int _defense) { defense = _defense; }
     public void setInventory(int index, Item i) { inventory[index] = i; }
-    public void addToInventory(Item i)
+    public bool addToInventory(Item i)
     {
         /* decide best index to add item to*/
-        if (inventory[0] == null) { setInventory(0, i); }
-        else if (inventory[1] == null) { setInventory(1, i); }
-        else if (inventory[2] == null) { setInventory(2, i); }
-        else if (inventory[3] == null) { setInventory(3, i); }
-        else { setInventory(4, i); }
+        if (inventory[0] == null) { setInventory(0, i); return true; }
+        else if (inventory[1] == null) { setInventory(1, i); return true; }
+        else if (inventory[2] == null) { setInventory(2, i); return true; }
+        else if (inventory[3] == null) { setInventory(3, i); return true; }
+        else if (inventory[4] == null) { setInventory(4, i); return true; }
+        else return false;
     }
     public void removeItem(int index) { inventory[index] = null; }
 }
