@@ -10,6 +10,7 @@ public class NullpoiAI : MonoBehaviour
     public float speed = 500f;
     public float nextWaypointDistance = 3f;
     public float projAccelSpeed = 30f;
+    public float aggroDist = 25f;
 
     public Animator nAnim;
 
@@ -90,7 +91,7 @@ public class NullpoiAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * speed * Time.deltaTime;
 
-        if (!attacking)
+        if (!attacking && Vector2.Distance(transform.position, target.position) <= aggroDist)
             rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);

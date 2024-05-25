@@ -12,7 +12,7 @@ public class TreeSlapper : Weapon
         projSpeed = 40f;
         isPiercing = false;
         cooldown = useSpeed;
-        staminaUse = 1;
+        staminaUse = 2;
     }
     private void Start()
     {
@@ -22,6 +22,6 @@ public class TreeSlapper : Weapon
         projSpeed = 40f;
         isPiercing = false;
         cooldown = useSpeed;
-        staminaUse = 1;
+        staminaUse = 2;
     }
 }

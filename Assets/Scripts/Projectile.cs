@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public ParticleSystem ps;
+    public GameObject ps;
 
     protected int damage;
     protected bool isPiercing;

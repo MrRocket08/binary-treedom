@@ -10,15 +10,16 @@ public class Player : MonoBehaviour
     // fields
     public int health = 20;
     public int MAXHEALTH = 20;
-    private float healthRegen = 1f;
+    private float healthRegen = 2f;
     public HealthBar healthBar;
-    public int stamina = 5;
-    public int MAXSTAMINA = 5;
+    public int stamina = 8;
+    public int MAXSTAMINA = 8;
     private float staminaRegen = 1f;
     public StaminaBar staminaBar;
     private int speed;
     private int defense;
     public Item[] inventory = new Item[5];
+    private bool invincible;
 
     private SpriteRenderer sp;
     private Rigidbody2D rb;
@@ -28,7 +29,6 @@ public class Player : MonoBehaviour
     public void Attack() {
         if(stamina >= wm.getWeapon().getStaminaUse() && wm.getWeapon().getCooldown() <= 0)
         {
-            Debug.Log("Attacking!");
             wm.useWeapon();
         }
     }
@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButton(0) && wm.getWeapon() != null)
         {
-            Debug.Log("A");
             Attack();
         }
 
@@ -83,15 +82,32 @@ public class Player : MonoBehaviour
 
     public void getHit(int damage, Vector2 knockback)
     {
-        health -= damage;
-        if (health <= 0)
+        if (!invincible)
         {
-            Die();
+            health -= damage;
+
+            if (health <= 0)
+            {
+                Die();
+            } else
+            {
+                StartCoroutine(Invincibility());
+            }
         }
 
         rb.AddForce(knockback, ForceMode2D.Impulse); //this currently just--doesn't work
 
         // add code here that makes the player flash white (using sp)
+    }
+
+    // gives the player i-frames (they can't be hit again within this .25 second time period)
+    public IEnumerator Invincibility()
+    {
+        invincible = true;
+
+        yield return new WaitForSeconds(.5f);
+
+        invincible = false;
     }
 
     public void Die() 

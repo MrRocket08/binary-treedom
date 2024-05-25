@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 287364848921104596, guid: 948d4d275b884064bb2ca8fe03b6cea8, type: 3}
       propertyPath: itemToGive
       value: 
-      objectReference: {fileID: 4205407573495624531}
+      objectReference: {fileID: 5513890857774204264}
     - target: {fileID: 3598438039650390469, guid: 948d4d275b884064bb2ca8fe03b6cea8, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -90,14 +90,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4811340003490689255, guid: 948d4d275b884064bb2ca8fe03b6cea8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4205407573495624531}
+      addedObject: {fileID: 5513890857774204264}
   m_SourcePrefab: {fileID: 100100000, guid: 948d4d275b884064bb2ca8fe03b6cea8, type: 3}
 --- !u!1 &9066703053140393834 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4811340003490689255, guid: 948d4d275b884064bb2ca8fe03b6cea8, type: 3}
   m_PrefabInstance: {fileID: 4545880653242142605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4205407573495624531
+--- !u!114 &5513890857774204264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5764272574793421186, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 192
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 548622659549443900, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_Name

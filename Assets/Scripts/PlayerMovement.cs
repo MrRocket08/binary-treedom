@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         //dashing routine
         if(Input.GetMouseButtonDown(1) && canDash && player.getStamina() >= dashingCost) {
+            StartCoroutine(player.Invincibility());
             StartCoroutine(Dash());
         }
     }

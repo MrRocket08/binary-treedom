@@ -14,6 +14,15 @@ public class NullpoiProjectile : Projectile
     {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
+
+        StartCoroutine(DelayDestroy());
+    }
+
+    private IEnumerator DelayDestroy()
+    {
+        yield return new WaitForSeconds(5);
+
+        Destroy(this.gameObject);
     }
 
     private void FixedUpdate()
@@ -32,7 +41,7 @@ public class NullpoiProjectile : Projectile
 
             if (!isPiercing)
             {
-                //Instantiate(ps, transform.position, Quaternion.identity);
+                //GameObject instPars = Instantiate(ps, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }
