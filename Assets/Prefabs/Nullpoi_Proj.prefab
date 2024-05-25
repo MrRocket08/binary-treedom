@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3966125337783022455
+--- !u!1001 &8474981439408279303
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5764272574793421186, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_Radius
-      value: 0.24
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -5764272574793421186, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 192
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 548622659549443900, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_Name
-      value: Leaf_Proj
+      value: Nullpoi_Proj
       objectReference: {fileID: 0}
     - target: {fileID: 1507864402212161350, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: m_Mass
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3358950881162582277, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_LocalScale.x
@@ -75,10 +75,31 @@ PrefabInstance:
     - target: {fileID: 5086590926060906950, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2013998774, guid: 023f43cb1ca484a4995b1ad97139b7e7, type: 3}
-    m_RemovedComponents:
-    - {fileID: 3468837246378364163, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
+      objectReference: {fileID: 21300000, guid: 1ceeaf10561f75f44917f18505a9953e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 548622659549443900, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5106234527506827207}
   m_SourcePrefab: {fileID: 100100000, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
+--- !u!1 &8214627093524854843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 548622659549443900, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
+  m_PrefabInstance: {fileID: 8474981439408279303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5106234527506827207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214627093524854843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04ac2d9902c1954a920c8517d5551c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 0}
+  player: {fileID: 0}

@@ -32,6 +32,6 @@ public class NullpoiScript : Enemy
 
     public override void Attack()
     {
-        npAI.Attack();
+        npAI.Attack(shootSphere);
     }
 }

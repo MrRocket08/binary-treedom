@@ -9,6 +9,7 @@ public class NullpoiAI : MonoBehaviour
 
     public float speed = 500f;
     public float nextWaypointDistance = 3f;
+    public float projAccelSpeed = 30f;
 
     public Animator nAnim;
 
@@ -45,9 +46,28 @@ public class NullpoiAI : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void Attack(GameObject projectile)
     {
         attacking = true;
+
+        StartCoroutine(AttackSpawning(projectile));
+    }
+
+    private IEnumerator AttackSpawning(GameObject projectile)
+    {
+        GameObject instProj;
+        for(int i = 0; i < 2; i++)
+        {
+            instProj = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            instProj.GetComponent<NullpoiProjectile>().setAccelSpeed(projAccelSpeed);
+
+            yield return new WaitForSeconds(.5f);
+        }
+
+        instProj = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+        instProj.GetComponent<NullpoiProjectile>().setAccelSpeed(projAccelSpeed);
+
+        attacking = false;
     }
 
     // Update is called once per frame
@@ -68,7 +88,8 @@ public class NullpoiAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * speed * Time.deltaTime;
 
-        rb.AddForce(force);
+        if (!attacking)
+            rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
@@ -77,7 +98,13 @@ public class NullpoiAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x > 0.05f)
+        if (attacking)
+        {
+            //preferably making an attacking animation where the eye glows
+            nAnim.ResetTrigger("Moving");
+            nAnim.SetTrigger("Idle");
+        }
+        else if (force.x > 0.05f)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
 

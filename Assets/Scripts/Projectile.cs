@@ -6,8 +6,8 @@ public class Projectile : MonoBehaviour
 {
     public ParticleSystem ps;
 
-    private int damage;
-    private bool isPiercing;
+    protected int damage;
+    protected bool isPiercing;
 
     public void setFields(int _damage, bool _isPiercing)
     {

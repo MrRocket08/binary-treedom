@@ -40182,10 +40182,12 @@ MonoBehaviour:
   - {x: 15, y: 3}
   - {x: 23, y: -5}
   - {x: 40, y: -3}
+  - {x: 55, y: -7.5}
   enemies:
   - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
   - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
   - {fileID: 2561300922857587310, guid: f10d095f60bad474ca07a63358af46ea, type: 3}
+  - {fileID: 5167801199625815544, guid: a7be247b535e9a14d8cbd67a9ccf9b3a, type: 3}
   interactableLocations:
   - {x: 19.5, y: 4}
   interactables:
@@ -40199,7 +40201,7 @@ Transform:
   m_GameObject: {fileID: 1961552132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.17, y: -3.32, z: 0}
+  m_LocalPosition: {x: 55.3, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

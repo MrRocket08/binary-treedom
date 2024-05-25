@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 756069786243830178}
   - component: {fileID: 6519490073387255828}
   - component: {fileID: 7971888483842015009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NullpoiGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 3155573644747104258}
   - component: {fileID: 3702109979061568482}
   - component: {fileID: 3503524556802219876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nullpoi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1200
   nextWaypointDistance: 3
+  projAccelSpeed: 120
   nAnim: {fileID: 7971888483842015009}
 --- !u!114 &3503524556802219876
 MonoBehaviour:
@@ -271,6 +272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nullpoi: {fileID: 5167801199625815544}
-  shootSphere: {fileID: 0}
+  shootSphere: {fileID: 8214627093524854843, guid: 7a5e553fb5d64f340b8966f3fd6cee39, type: 3}
   nAnimator: {fileID: 7971888483842015009}
   npAI: {fileID: 3702109979061568482}

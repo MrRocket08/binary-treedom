@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 520240684592981695}
   - component: {fileID: 1925192923604904743}
   - component: {fileID: 5353811960689488756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rerr
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rer: {fileID: 2561300922857587310}
-  rAnimator: {fileID: 536462350639244214}
   lungeSpeed: 30
 --- !u!114 &5353811960689488756
 MonoBehaviour:
@@ -169,7 +168,7 @@ GameObject:
   - component: {fileID: 5668747686561320078}
   - component: {fileID: 6569632586022300815}
   - component: {fileID: 536462350639244214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RerrGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
