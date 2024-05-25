@@ -60,12 +60,14 @@ public class NullpoiAI : MonoBehaviour
         {
             instProj = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
             instProj.GetComponent<NullpoiProjectile>().setAccelSpeed(projAccelSpeed);
+            instProj.GetComponent<NullpoiProjectile>().setFields(3, false);
 
             yield return new WaitForSeconds(.5f);
         }
 
         instProj = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
         instProj.GetComponent<NullpoiProjectile>().setAccelSpeed(projAccelSpeed);
+        instProj.GetComponent<NullpoiProjectile>().setFields(3, false);
 
         attacking = false;
     }
