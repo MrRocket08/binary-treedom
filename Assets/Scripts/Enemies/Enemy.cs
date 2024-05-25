@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
     {
         health -= amount;
         if (health <= 0)
-            Destroy(this);
+            Destroy(this.gameObject);
     }
 
 }

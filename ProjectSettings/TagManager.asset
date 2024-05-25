@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Traversable
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - Obstacle
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Projectiles
   - 
   - 
   - 

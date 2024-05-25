@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     // fields
-    protected string name;
     protected bool inInventory;
     public Sprite sprite;
 

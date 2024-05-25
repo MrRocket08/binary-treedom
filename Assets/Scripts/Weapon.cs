@@ -15,23 +15,32 @@ public class Weapon : Item
 
     public GameObject projectile;
 
+    private Vector3 mousePositionScreen;
+    private Vector3 mousePositionWorld;
+    private Vector2 shootDir;
+
     // class methods
     public void Hit()
     {
-        Vector3 mousePositionScreen = Input.mousePosition;
-        Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
-        Vector2 shootDir = (mousePositionWorld - transform.position).normalized;
+        
 
         GameObject _projectile = Instantiate(projectile, transform.position, Quaternion.identity);
-        _projectile.transform.LookAt(mousePositionWorld);
-        _projectile.GetComponent<Rigidbody2D>().AddForce(shootDir * projSpeed);
+        _projectile.transform.right = shootDir;
         _projectile.GetComponent<Projectile>().setFields(damage, isPiercing);
+        _projectile.GetComponent<Rigidbody2D>().AddForce(shootDir * projSpeed, ForceMode2D.Impulse);
 
         cooldown = useSpeed;
     }
     public void Update()
     {
         cooldown -= Time.deltaTime;
+
+        mousePositionScreen = Input.mousePosition;
+        mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
+        shootDir = (mousePositionWorld - transform.position).normalized;
+
+        transform.right = shootDir;
+        transform.Rotate(new Vector3(0f, 0f, 45f));
     }
 
     public int HitDamage()

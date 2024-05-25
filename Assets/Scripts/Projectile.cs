@@ -17,15 +17,18 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().subtractHealth(damage);
 
             if (!isPiercing)
             {
-                Instantiate(ps, transform.position, Quaternion.identity);
-                Destroy(this);
+                //Instantiate(ps, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
             }
+        } else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }

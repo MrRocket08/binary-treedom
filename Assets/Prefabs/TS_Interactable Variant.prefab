@@ -110,5 +110,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 75c61b2c1052c44b1a42fc057c40139c, type: 3}
-  projectile: {fileID: 548622659549443900, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
-  currentTransform: {fileID: 0}
+  projectile: {fileID: 3501435038721311819, guid: 7e0cebe9c1361a849b4a34ae789d5b4d, type: 3}

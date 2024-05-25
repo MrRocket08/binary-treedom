@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class TreeSlapper : Weapon
 {
+    public TreeSlapper(Sprite _sprite, GameObject _projectile) : base()
+    {
+        damage = 3;
+        damageRange = 1;
+        useSpeed = 0.5f;
+        projSpeed = 40f;
+        isPiercing = false;
+        cooldown = useSpeed;
+        staminaUse = 1;
+    }
     private void Start()
     {
-        damage = 5;
-        damageRange = 2;
+        damage = 3;
+        damageRange = 1;
         useSpeed = 0.5f;
         projSpeed = 40f;
         isPiercing = false;

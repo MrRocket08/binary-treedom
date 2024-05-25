@@ -47,7 +47,10 @@ public class Interactable : MonoBehaviour
 
             if(itemToGive is Weapon)
             {
-                wm.setWeapon((Weapon)itemToGive);
+                if (itemToGive is TreeSlapper)
+                {
+                    wm.setWeapon(wm.GetComponent<TreeSlapper>());
+                }
                 
                 Destroy(this.gameObject);
             } else
