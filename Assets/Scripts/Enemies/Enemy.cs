@@ -13,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
     protected GameObject player;
     protected Vector2 targetPos;
     public SpriteRenderer sp;
+    public GameObject ps;
 
     // class methods
     public abstract void Attack();
@@ -24,7 +25,11 @@ public abstract class Enemy : MonoBehaviour
         StartCoroutine(DamageVisuals());
 
         if (health <= 0)
+        {
+            Instantiate(ps, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
+        }
     }
     private IEnumerator DamageVisuals()
     {

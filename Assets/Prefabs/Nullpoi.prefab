@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sp: {fileID: 6519490073387255828}
+  ps: {fileID: 2037925882437575929, guid: 7931e1ca513962545bae09d1e93b8e1a, type: 3}
   nullpoi: {fileID: 5167801199625815544}
   shootSphere: {fileID: 8214627093524854843, guid: 7a5e553fb5d64f340b8966f3fd6cee39, type: 3}
   nAnimator: {fileID: 7971888483842015009}

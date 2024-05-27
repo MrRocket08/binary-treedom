@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: World
+    uniqueID: 1940761801
+    locked: 0
   - name: Entities
     uniqueID: 183471705
     locked: 0

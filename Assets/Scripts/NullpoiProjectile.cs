@@ -22,7 +22,7 @@ public class NullpoiProjectile : Projectile
     {
         yield return new WaitForSeconds(5);
 
-        Instantiate(ps, (Vector2)transform.position, Quaternion.identity);
+        Instantiate(ps, transform.position, Quaternion.identity);
 
         Destroy(this.gameObject);
     }
@@ -43,13 +43,13 @@ public class NullpoiProjectile : Projectile
 
             if (!isPiercing)
             {
-                Instantiate(ps, (Vector2)transform.position, Quaternion.identity);
+                Instantiate(ps, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Instantiate(ps, (Vector2)transform.position, Quaternion.identity);
+            Instantiate(ps, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
