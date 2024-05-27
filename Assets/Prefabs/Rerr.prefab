@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c966f13ebf440099a5d36c9cbbe042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sp: {fileID: 6569632586022300815}
   rer: {fileID: 2561300922857587310}
   lungeSpeed: 30
   rAI: {fileID: 5353811960689488756}
@@ -203,7 +204,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.2
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

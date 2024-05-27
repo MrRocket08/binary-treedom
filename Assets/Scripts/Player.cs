@@ -86,6 +86,8 @@ public class Player : MonoBehaviour
         {
             health -= damage;
 
+            StartCoroutine(DamageVisuals());
+
             if (health <= 0)
             {
                 Die();
@@ -98,6 +100,14 @@ public class Player : MonoBehaviour
         rb.AddForce(knockback, ForceMode2D.Impulse); //this currently just--doesn't work
 
         // add code here that makes the player flash white (using sp)
+    }
+    private IEnumerator DamageVisuals()
+    {
+        sp.color = Color.gray;
+
+        yield return new WaitForSeconds(.1f);
+
+        sp.color = Color.white;
     }
 
     // gives the player i-frames (they can't be hit again within this .25 second time period)
