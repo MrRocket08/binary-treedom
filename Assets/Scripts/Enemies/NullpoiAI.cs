@@ -18,9 +18,11 @@ public class NullpoiAI : MonoBehaviour
     private int currentWaypoint = 0;
     bool reachedEndPath = false;
     bool attacking = false;
+    private Vector2 targetDir;
 
     Seeker seeker;
     Rigidbody2D rb;
+    RaycastHit2D hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +51,12 @@ public class NullpoiAI : MonoBehaviour
 
     public void Attack(GameObject projectile)
     {
-        attacking = true;
+        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        {
+            attacking = true;
 
-        StartCoroutine(AttackSpawning(projectile));
+            StartCoroutine(AttackSpawning(projectile));
+        }
     }
 
     private IEnumerator AttackSpawning(GameObject projectile)
@@ -76,6 +81,10 @@ public class NullpoiAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        targetDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y).normalized;
+
+        hit = Physics2D.Raycast((Vector2)transform.position + targetDir, targetDir, aggroDist);
+
         if (path == null) return;
 
         if (currentWaypoint >= path.vectorPath.Count)
@@ -91,7 +100,7 @@ public class NullpoiAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * speed * Time.deltaTime;
 
-        if (!attacking && Vector2.Distance(transform.position, target.position) <= aggroDist)
+        if (!attacking && hit.collider != null && hit.collider.CompareTag("Player"))
             rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -103,7 +112,7 @@ public class NullpoiAI : MonoBehaviour
 
         if (attacking)
         {
-            //preferably making an attacking animation where the eye glows
+            //preferably make an attacking animation where the eye glows
             nAnim.ResetTrigger("Moving");
             nAnim.SetTrigger("Idle");
         }

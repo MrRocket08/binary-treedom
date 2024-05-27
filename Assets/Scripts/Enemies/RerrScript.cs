@@ -6,6 +6,7 @@ public class RerrScript : Enemy
 {
     public GameObject rer;
     public float lungeSpeed = 40f;
+    public RerrAI rAI;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +31,10 @@ public class RerrScript : Enemy
 
     public override void Attack()
     {
-        Vector2 dashDirection = new Vector2(targetPos.x - rer.transform.position.x, targetPos.y - rer.transform.position.y).normalized;
-
-        rer.GetComponent<Rigidbody2D>().velocity = dashDirection * lungeSpeed;
+        rAI.Attack(lungeSpeed);
     }
 
+    // works, but goofily
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -43,9 +43,9 @@ public class RerrScript : Enemy
 
             col.gameObject.GetComponent<Player>().getHit(damage, knockbackDir * knockback);
 
-            knockbackDir *= -1;
+            //knockbackDir *= -1;
 
-            rer.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
+            //rer.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
         }
     }
 }

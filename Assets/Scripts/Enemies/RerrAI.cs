@@ -17,9 +17,11 @@ public class RerrAI : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     bool reachedEndPath = false;
+    Vector2 targetDir;
 
     Seeker seeker;
     Rigidbody2D rb;
+    RaycastHit2D hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +47,19 @@ public class RerrAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
+    public void Attack(float lungeSpeed)
+    {
+        if(hit.collider != null && hit.collider.CompareTag("Player"))
+            rb.velocity = targetDir * lungeSpeed;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        targetDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y).normalized;
+
+        hit = Physics2D.Raycast((Vector2)transform.position + targetDir, targetDir, aggroDist);
+
         if (path == null) return;
 
         if (currentWaypoint >= path.vectorPath.Count)
@@ -64,7 +75,7 @@ public class RerrAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * speed * Time.deltaTime;
 
-        if (Vector2.Distance(transform.position, target.position) <= aggroDist)
+        if (hit.collider != null && hit.collider.CompareTag("Player"))
             rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);

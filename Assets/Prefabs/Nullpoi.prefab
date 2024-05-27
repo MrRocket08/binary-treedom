@@ -258,6 +258,7 @@ MonoBehaviour:
   speed: 1200
   nextWaypointDistance: 3
   projAccelSpeed: 100
+  aggroDist: 45
   nAnim: {fileID: 7971888483842015009}
 --- !u!114 &3503524556802219876
 MonoBehaviour:

@@ -41,12 +41,13 @@ public class NullpoiProjectile : Projectile
 
             if (!isPiercing)
             {
-                //GameObject instPars = Instantiate(ps, transform.position, Quaternion.identity);
+                GameObject instPars = Instantiate(ps, (Vector2)transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
+            GameObject instPars = Instantiate(ps, (Vector2)transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

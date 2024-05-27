@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rer: {fileID: 2561300922857587310}
   lungeSpeed: 30
+  rAI: {fileID: 5353811960689488756}
 --- !u!114 &5353811960689488756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   nextWaypointDistance: 2
+  aggroDist: 30
   RerrGFX: {fileID: 5668747686561320078}
   rAnim: {fileID: 536462350639244214}
 --- !u!1 &7526689132823002137
