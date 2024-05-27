@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e803786751fc54349968cb5ed6b71f2a
+guid: 55cc4ccbbccf5453e896e50d80f269d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rerr_Sprites_0
+      name: Gladius_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,35 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0055f3fc82b293548bf5f0c67a7ecada
-      internalID: 1365873751
+      spriteID: 8db1ced91f38e5641b2555ad3b11aade
+      internalID: 333969351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rerr_Sprites_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c1419a8a5711ba4ab14d7b43cc35b67
-      internalID: -852123021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rerr_Sprites_2
+      name: Gladius_1
       rect:
         serializedVersion: 2
         x: 32
@@ -166,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13050345cddfe1543b2b84991016f06d
-      internalID: -1664479993
+      spriteID: 825ce7376d24fa343a56935d3bcc1855
+      internalID: 524544914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rerr_Sprites_3
+      name: Gladius_2
       rect:
         serializedVersion: 2
         x: 48
@@ -187,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf3faee1e11aaa4480961da5f67516f
-      internalID: 1685083360
+      spriteID: 95bb115754183b2489e4b4638cee34e3
+      internalID: -715824848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rerr_Sprites_4
+      name: Gladius_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -208,18 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5add730e90c687e4db384616064deb38
-      internalID: -630986479
+      spriteID: d2c27e0a4f9763948a7fae5ed03529d7
+      internalID: -1631155216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rerr_Sprites_5
+      name: Gladius_4
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -229,8 +208,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4d993229384f684c97597c92c0c1de5
-      internalID: -43673800
+      spriteID: b5d7054a8c31dfb42b8b11c7653972d5
+      internalID: -875229741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladius_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf56b8928cfe83a4fa9dc7eabc9415b6
+      internalID: -822096225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladius_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61800add010901d4abab38e0aa935c74
+      internalID: -538643914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gladius_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d425833a159c3f4b979a7f37cc36789
+      internalID: 306726893
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rerr_Sprites_0: 1365873751
-      Rerr_Sprites_1: -852123021
-      Rerr_Sprites_2: -1664479993
-      Rerr_Sprites_3: 1685083360
-      Rerr_Sprites_4: -630986479
-      Rerr_Sprites_5: -43673800
+      Gladius_0: 333969351
+      Gladius_1: 524544914
+      Gladius_2: -715824848
+      Gladius_3: -1631155216
+      Gladius_4: -875229741
+      Gladius_5: -822096225
+      Gladius_6: -538643914
+      Gladius_7: 306726893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

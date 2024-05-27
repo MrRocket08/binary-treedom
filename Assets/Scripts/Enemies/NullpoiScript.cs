@@ -15,7 +15,7 @@ public class NullpoiScript : Enemy
         player = GameObject.Find("Player");
 
         health = 10;
-        defense = 4;
+        defense = 3;
         damage = 5;
         knockback = 40;
         attackCooldown = 4;

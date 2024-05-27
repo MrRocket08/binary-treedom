@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void subtractHealth(int amount)
     {
-        health -= amount;
+        health -= (float) amount / defense;
 
         StartCoroutine(DamageVisuals());
 

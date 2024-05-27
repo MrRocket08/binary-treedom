@@ -51,6 +51,11 @@ public class Interactable : MonoBehaviour
                 {
                     wm.setWeapon(wm.GetComponent<TreeSlapper>());
                 }
+
+                if (itemToGive is Gladius)
+                {
+                    wm.setWeapon(wm.GetComponent<Gladius>());
+                }
                 
                 Destroy(this.gameObject);
             } else

@@ -13,8 +13,8 @@ public class RerrScript : Enemy
     {
         player = GameObject.Find("Player");
 
-        health = 5;
-        defense = 0;
+        health = 6;
+        defense = 1;
         damage = 4;
         knockback = 20;
         attackCooldown = 3;

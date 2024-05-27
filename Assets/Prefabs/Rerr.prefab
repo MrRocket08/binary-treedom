@@ -235,7 +235,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5882353, g: 0.42352945, b: 0.7294118, a: 1}
+      key0: {r: 0.2627451, g: 0.17254902, b: 0.3921569, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -347,9 +347,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 183471705
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -530932717, guid: 745b6a75a6f244178bf3fa2a79e29a23, type: 3}
+  m_Sprite: {fileID: 1365873751, guid: e803786751fc54349968cb5ed6b71f2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

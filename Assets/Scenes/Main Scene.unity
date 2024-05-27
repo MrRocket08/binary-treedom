@@ -4481,6 +4481,7 @@ GameObject:
   - component: {fileID: 696369788}
   - component: {fileID: 696369787}
   - component: {fileID: 696369790}
+  - component: {fileID: 696369791}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4580,6 +4581,26 @@ MonoBehaviour:
   maxRight: 200
   maxUp: 200
   maxDown: -200
+--- !u!114 &696369791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696369786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 192
+  m_RefResolutionY: 108
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &697843869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,6 +7554,7 @@ GameObject:
   - component: {fileID: 1149212192}
   - component: {fileID: 1149212193}
   - component: {fileID: 1149212194}
+  - component: {fileID: 1149212195}
   m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
@@ -7635,6 +7657,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 75c61b2c1052c44b1a42fc057c40139c, type: 3}
   projectile: {fileID: 3501435038721311819, guid: 7e0cebe9c1361a849b4a34ae789d5b4d, type: 3}
+  player: {fileID: 0}
+--- !u!114 &1149212195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149212189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327c0ca35fc766c4c8994e6d9c828655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 333969351, guid: 55cc4ccbbccf5453e896e50d80f269d8, type: 3}
+  projectile: {fileID: 6892714625539946073, guid: 9545f14f5a7262644afb52ea44cab517, type: 3}
   player: {fileID: 0}
 --- !u!1 &1176998132
 GameObject:
@@ -40830,8 +40867,10 @@ MonoBehaviour:
   - {fileID: 5167801199625815544, guid: a7be247b535e9a14d8cbd67a9ccf9b3a, type: 3}
   interactableLocations:
   - {x: 19.5, y: 4}
+  - {x: 74, y: 12}
   interactables:
   - {fileID: 9066703053140393834, guid: 5e4555ba005d837409de18a987720372, type: 3}
+  - {fileID: 5094504563597490816, guid: a94ae7f37152cda4f96133a768e0c239, type: 3}
 --- !u!4 &1961552134
 Transform:
   m_ObjectHideFlags: 0
@@ -40841,7 +40880,7 @@ Transform:
   m_GameObject: {fileID: 1961552132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.9, y: -17.9, z: 0}
+  m_LocalPosition: {x: 74.2, y: 11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
