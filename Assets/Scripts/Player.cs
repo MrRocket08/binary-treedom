@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // fields
     public int health = 20;
     public int MAXHEALTH = 20;
-    private float healthRegen = 2f;
+    private float healthRegen = 5f;
     public HealthBar healthBar;
     public int stamina = 8;
     public int MAXSTAMINA = 8;
@@ -72,11 +72,11 @@ public class Player : MonoBehaviour
         if (health <= MAXHEALTH - 1 && healthRegen <= 0)
         {
             health += 1;
-            healthRegen = 1;
+            healthRegen = 5f;
         }
         else if (health == MAXHEALTH)
         {
-            healthRegen = 1;
+            healthRegen = 5f;
         }
     }
 
@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
     {
         invincible = true;
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
 
         invincible = false;
     }

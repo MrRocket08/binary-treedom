@@ -23,11 +23,12 @@ public class Projectile : MonoBehaviour
 
             if (!isPiercing)
             {
-                //Instantiate(ps, transform.position, Quaternion.identity);
+                Instantiate(ps, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         } else if (collision.gameObject.CompareTag("Obstacle"))
         {
+            Instantiate(ps, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
