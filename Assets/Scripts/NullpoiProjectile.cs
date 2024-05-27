@@ -14,17 +14,6 @@ public class NullpoiProjectile : Projectile
     {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-
-        StartCoroutine(DelayDestroy());
-    }
-
-    private IEnumerator DelayDestroy()
-    {
-        yield return new WaitForSeconds(5);
-
-        Instantiate(ps, transform.position, Quaternion.identity);
-
-        Destroy(this.gameObject);
     }
 
     private void FixedUpdate()

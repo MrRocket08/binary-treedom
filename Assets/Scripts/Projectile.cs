@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public GameObject ps;
+    public float seconds;
 
     protected int damage;
     protected bool isPiercing;
@@ -16,12 +17,14 @@ public class Projectile : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(DelayDestroy());   
+        StartCoroutine(DelayDestroy(seconds));
     }
 
-    private IEnumerator DelayDestroy()
+    protected IEnumerator DelayDestroy(float sec)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(sec);
+
+        Instantiate(ps, transform.position, Quaternion.identity);
 
         Destroy(this.gameObject);
     }
@@ -34,12 +37,12 @@ public class Projectile : MonoBehaviour
 
             if (!isPiercing)
             {
-                //Instantiate(ps, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
+                Instantiate(ps, new Vector3(transform.position.x, transform.position.y, 1), Quaternion.identity);
                 Destroy(this.gameObject);
             }
         } else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            //Instantiate(ps, transform.position, Quaternion.identity);
+            Instantiate(ps, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: ps
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3603537308594670887, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
+      propertyPath: seconds
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5086590926060906950, guid: a0fcaf4d349bdfa49b1524cbeb58c022, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -109,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 1356226159823250798, guid: f2f42430b68468645aba37bd1e1f03a6, type: 3}
+  seconds: 0
   player: {fileID: 0}
 --- !u!96 &8661852419124592391
 TrailRenderer:
